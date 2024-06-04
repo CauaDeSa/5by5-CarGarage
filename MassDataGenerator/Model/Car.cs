@@ -2,7 +2,7 @@
 {
     public class Car : IEntity
     {
-        public static readonly string Insert = "INSERT INTO Car (Plate, Name, ModelYear, ManufactureYear, Color) VALUES (@Plate, @Name, @ModelYear, @ManufactureYear, @Color)";
+        public readonly string Insert = "INSERT INTO Car (plate, carName, modelYear, manufactureYear, color) VALUES (@Plate, @Name, @ModelYear, @ManufactureYear, @Color)";
 
         public string Plate { get; set; }
         public string Name { get; set; }
