@@ -1,36 +1,14 @@
 ﻿using Model;
+using Repository;
 
 namespace Service
 {
     public class EntityService
     {
-        private readonly string _path = "../../../../Reports/";
-        private readonly string _file = "Cars.json";
+        private readonly JsonRepository _jsonRepository;
 
-        public bool CreateJson(string entitysString)
-        {
-            try
-            {
-                if (!Directory.Exists(_path))
-                    Directory.CreateDirectory(_path);
+        public EntityService() => _jsonRepository = new();
 
-                if (!File.Exists(_path + _file))
-                {
-                    var file = File.Create(_path + _file);
-                    file.Close();
-                }
-
-                using StreamWriter sw = new(_path + _file);
-                sw.WriteLine(entitysString);
-
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return false;
-        } 
+        public bool CreateJson(string entitysString) => _jsonRepository.CreateJson(entitysString);
     }
 }
