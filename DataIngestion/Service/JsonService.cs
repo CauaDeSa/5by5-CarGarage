@@ -7,6 +7,6 @@ namespace Service
     {
         private readonly ReadFile _readFile = new();
 
-        public List<Car> GetJson() => _readFile.GetJson();
+        public List<Car> GetListFromJson() => _readFile.GetListFromJson();
     }
 }

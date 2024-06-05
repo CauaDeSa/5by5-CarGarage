@@ -7,7 +7,7 @@ internal class Program
     {
         ViewController controller = new();
         
-        List<Car> cars = controller.GetJson();
+        List<Car> cars = controller.GetListFromJson();
 
         Console.WriteLine(cars.Count == 0 ? "Error reading file." : "File sucessfully readed.");
 

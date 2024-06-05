@@ -9,7 +9,7 @@ namespace Controller
         private readonly JsonService _readFile = new();
         private readonly EntityService _entityService = new();
 
-        public List<Car> GetJson() => _readFile.GetJson();
+        public List<Car> GetListFromJson() => _readFile.GetListFromJson();
 
         public bool Insert(List<Car> entitys) => _entityService.Insert(entitys);
     }

@@ -8,7 +8,7 @@ namespace Repository
         private readonly string _path = "../../../../../Reports/";
         private readonly string _file = "Cars.json";
 
-        public List<Car> GetJson()
+        public List<Car> GetListFromJson()
         {
             StreamReader file = new(_path + _file);
 
