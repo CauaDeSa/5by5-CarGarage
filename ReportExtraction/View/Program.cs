@@ -1,6 +1,5 @@
 ﻿using Model;
 using Controller;
-using System.Drawing;
 
 internal class Program
 {
@@ -37,7 +36,7 @@ internal class Program
                     if (status < 1 || status > 2)
                         break;
 
-                    cars = controller.GetCarsByPlate(controller.GetCarPlatesByStatus(status));
+                    cars = controller.GetCarsByStatus(status);
 
                     if (cars.Count == 0)
                     {
@@ -45,7 +44,7 @@ internal class Program
                         break;
                     }
 
-                    controller.CreateXmlFile(ByStatus.Replace(" ", "") + status, controller.GenerateXML(cars));
+                    controller.CreateXmlFile(ByStatus.Replace(" ", "") + status, controller.GenerateXml(cars));
 
                     ShowCars(cars);
                     break;
@@ -64,7 +63,7 @@ internal class Program
                         break;
                     }
 
-                    controller.CreateXmlFile(ByColor.Replace(" ", "") + color,controller.GenerateXML(cars));
+                    controller.CreateXmlFile(ByColor.Replace(" ", "") + color,controller.GenerateXml(cars));
 
                     ShowCars(cars);
                     break;
@@ -83,7 +82,7 @@ internal class Program
                         break;
                     }
 
-                    controller.CreateXmlFile(ByManufactureYear.Replace(" ", "") + year, controller.GenerateXML(cars));
+                    controller.CreateXmlFile(ByManufactureYear.Replace(" ", "") + year, controller.GenerateXml(cars));
 
                     ShowCars(cars);
                     break;
@@ -120,14 +119,14 @@ internal class Program
                                   "[2] Generate report by color.\n" +
                                   "[3] Generate report by manufacture year.\n" +
 
-                                  "[any other number] Exit\n\n");
+                                  "[any other number] Exit\n");
                 break;
 
             case var value when value == ByStatus:
                 Console.WriteLine("[1] True\n" +
                                   "[2] False\n" +
 
-                                  "[any other number] Exit\n\n");
+                                  "[any other number] Exit\n");
                 break;
 
             case var value when value == ByColor:

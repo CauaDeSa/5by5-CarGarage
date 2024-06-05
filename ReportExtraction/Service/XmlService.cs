@@ -11,7 +11,7 @@ namespace Service
 
         public XmlService() => _xmlRepository = new();
 
-        public string WriteFile(List<Car> cars)
+        public string GenerateXml(List<Car> cars)
         {
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
             namespaces.Add("", "");
@@ -25,6 +25,6 @@ namespace Service
             return textWriter.ToString();
         }
 
-        public bool GenerateXml(string xmlName, string cars) => _xmlRepository.GenerateXml(xmlName, cars);
+        public bool GenerateXmlFile(string xmlName, string cars) => _xmlRepository.GenerateXmlFile(xmlName, cars);
     }
 }

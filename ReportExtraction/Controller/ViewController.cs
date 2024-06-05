@@ -20,12 +20,10 @@ namespace Controller
 
         public List<Car> GetCarsByManufactureYear(int year) => _carService.GetCarsByManufactureYear(year);
 
-        public List<string> GetCarPlatesByStatus(int status) => _carOperationService.GetCarPlatesByStatus(status); 
+        public List<Car> GetCarsByStatus(int status) => _carOperationService.RetrieveCarByStatus(status); 
 
-        public List<Car> GetCarsByPlate(List<string> list) => _carService.GetCarsByPlate(list);
+        public string GenerateXml(List<Car> cars) => _xmlService.GenerateXml(cars);
 
-        public string GenerateXML(List<Car> cars) => _xmlService.WriteFile(cars);
-
-        public bool CreateXmlFile(string xmlName, string carsXml) => _xmlService.GenerateXml(xmlName, carsXml);
+        public bool CreateXmlFile(string xmlName, string carsXml) => _xmlService.GenerateXmlFile(xmlName, carsXml);
     }
 }

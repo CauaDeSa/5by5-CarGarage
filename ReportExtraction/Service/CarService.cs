@@ -13,6 +13,6 @@ namespace Service
 
         public List<Car> GetCarsByManufactureYear(int year) => _carRepository.RetrieveCarsByManufactureYear(year);
 
-        public List<Car> GetCarsByPlate(List<string> list) => _carRepository.RetrieveCarsByPlate(list);
+        public List<Car> GetCarsByPlate(List<string> plates) => _carRepository.RetrieveCarsByPlate(plates);
     }
 }

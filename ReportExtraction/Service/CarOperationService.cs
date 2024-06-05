@@ -9,6 +9,6 @@ namespace Service
 
         public CarOperationService() => _carOperationRepository = new();
 
-        public List<string> GetCarPlatesByStatus(int operationStatus) => _carOperationRepository.RetrieveCarPlatesByStatus(operationStatus);
+        public List<Car> RetrieveCarByStatus(int operationStatus) => _carOperationRepository.RetrieveCarByStatus(operationStatus);
     }
 }

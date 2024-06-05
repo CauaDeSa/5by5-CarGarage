@@ -11,21 +11,11 @@ namespace Repository
 
         public CarOperationRepository() => ConnectionString = ConfigurationManager.ConnectionStrings["stringConnection"].ConnectionString;
 
-        public List<string> RetrieveCarPlatesByStatus(int operationStatus)
+        public List<Car> RetrieveCarByStatus(int operationStatus)
         {
             using var connection = new SqlConnection(ConnectionString);
 
-            List<CarOperation> ops = connection.Query<CarOperation>(CarOperation.RetrieveByStatus, new { OperationStatus = operationStatus })
-                .ToList();
-
-            List<string> plates = new();
-
-            foreach (var carOp in ops)
-                plates.Add(carOp.CarPlate);    
-            
-
-            return plates;
-            
+            return connection.Query<Car>(CarOperation.RetrieveByStatus, new { operationStatus }).ToList();
         }
     }
 }

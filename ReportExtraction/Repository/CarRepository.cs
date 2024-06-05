@@ -15,46 +15,21 @@ namespace Repository
         {
             using var connection = new SqlConnection(ConnectionString);
 
-            connection.Open();
-
-            var result = connection.QueryMultiple(Car.RetrieveByColor, new { Color = color });
-
-            var cars = result.Read<Car>();
-
-            List<Car> carList = cars.AsList();
-
-            return carList;
+            return connection.Query<Car>(Car.RetrieveByColor, new { Color = color }).ToList();
         }
 
         public List<Car> RetrieveCarsByManufactureYear(int year)
         {
             using var connection = new SqlConnection(ConnectionString);
 
-            connection.Open();
-
-            var result = connection.QueryMultiple(Car.RetrieveByManufactureYear, new { ManufactureYear = year });
-
-            var cars = result.Read<Car>();
-
-            List<Car> carList = cars.AsList();
-
-            return carList;
+            return connection.Query<Car>(Car.RetrieveByManufactureYear, new { ManufactureYear = year }).ToList();
         }
 
-        public List<Car> RetrieveCarsByPlate(List<string> list)
+        public List<Car> RetrieveCarsByPlate(List<string> plates)
         {
             using var connection = new SqlConnection(ConnectionString);
 
-            connection.Open();
-
-            var result = connection.QueryMultiple(Car.RetrieveByPlate, new { Plate = list });
-
-            var cars = result.Read<Car>();
-
-            List<Car> carList = cars.AsList();
-
-            return carList;
+            return connection.Query<Car>(Car.RetrieveByPlate, new { Plate = plates }).ToList();
         }
-
     }
 }
