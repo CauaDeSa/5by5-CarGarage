@@ -22,7 +22,7 @@ namespace Repository
                     using (var connection = new SqlConnection(ConnectionString))
                     {
                         connection.Open();
-                        connection.Execute(car.Insert, new { Plate = car.Plate, Name = car.Name, ModelYear = car.ModelYear, ManufactureYear = car.ManufactureYear, Color = car.Color });
+                        connection.Execute(Car.Insert, new { car.Plate, car.CarName, car.ModelYear, car.ManufactureYear, car.Color });
 
                         status = true;
                     }

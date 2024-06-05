@@ -9,7 +9,7 @@ namespace Repository
     {
         private string ConnectionString { get; set; }
 
-        public CarOperationRepository() => ConnectionString = "Data Source=127.0.0.1; Initial Catalog=DBCarGarage; User Id=sa; Password=SqlServer2019!; TrustServerCertificate=Yes";
+        public CarOperationRepository() => ConnectionString = ConfigurationManager.ConnectionStrings["stringConnection"].ConnectionString;
 
         public List<string> RetrieveCarPlatesByStatus(int operationStatus)
         {

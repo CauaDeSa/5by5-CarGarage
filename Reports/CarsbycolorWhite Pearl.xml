@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Car>
+  <Plate>XYZ 7070</Plate>
+  <CarName>Asseto 2.0</CarName>
+  <ModelYear>1989</ModelYear>
+  <ManufactureYear>1990</ManufactureYear>
+  <Color>White Pearl</Color>
+</Car>

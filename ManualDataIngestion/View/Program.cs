@@ -188,7 +188,7 @@ namespace View
 
         public static void ShowMenu(string type)
         {
-            Console.WriteLine($" > {type.ToUpper()} < ");
+            Console.WriteLine($" > {type.ToUpper()} < \n");
 
             switch (type)
             {

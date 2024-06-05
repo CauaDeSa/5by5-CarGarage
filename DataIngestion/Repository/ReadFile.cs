@@ -5,7 +5,7 @@ namespace Repository
 {
     public class ReadFile
     {
-        private readonly string _path = "../../../../../MassDataGenerator/Reports/";
+        private readonly string _path = "../../../../../Reports/";
         private readonly string _file = "Cars.json";
 
         public List<Car> GetJson()
