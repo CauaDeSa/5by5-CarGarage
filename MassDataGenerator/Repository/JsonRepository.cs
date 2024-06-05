@@ -2,7 +2,7 @@
 {
     public class JsonRepository
     {
-        private readonly string _path = "../../../../Reports/";
+        private readonly string _path = "../../../../../Reports/";
         private readonly string _file = "Cars.json";
 
         public bool CreateJson(string entitysString)

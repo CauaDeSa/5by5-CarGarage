@@ -64,7 +64,7 @@ internal class Program
             cars.Add(new Car
             {
                 Plate = plates[i],
-                Name = names[random.Next(0, names.Count)],
+                CarName = names[random.Next(0, names.Count)],
                 ModelYear = modelYear,
                 ManufactureYear = random.Next(modelYear, 2023),
                 Color = colors[random.Next(0, colors.Count)]
